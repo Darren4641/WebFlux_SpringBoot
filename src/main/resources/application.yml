@@ -1,0 +1,29 @@
+
+
+spring:
+  sql:
+    init:
+      schema-locations: classpath*:schema.sql
+  application:
+    name: Webflux
+  r2dbc:
+    url: r2dbc:mysql://localhost:3306/webflux?useUnicode=true&serverTimezone=Asia/Seoul
+    username: user
+    password: 10041004
+    pool:
+      enabled: true
+      initial-size: 50
+      max-size: 50
+
+
+jwt :
+  access :
+    key : 9a1c7805bb074f31f9b36fa510d0c743a557aa44f9b5b1cd6dbb7f8905b067c8
+    validtime : 604800000 #7?
+
+# cors ??
+cors:
+  allowed-origins: 'http://localhost:3000'
+  allowed-methods: GET,POST,PUT,PATCH,DELETE,OPTIONS
+  allowed-headers: '*'
+  max-age: 3600
